@@ -1,0 +1,17 @@
+version: "3"
+services:
+  weatherapp_frontend:
+    build: ./frontend
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    working_dir: /usr/src/weatherapp_frontend
+
+  weatherapp_backend:
+    build: ./backend
+    env_file:
+      - .env
+    ports:
+      - "9000:9000"
+    working_dir: /usr/src/weatherapp_backend
