@@ -1,12 +1,12 @@
 FROM node:10
 
-WORKDIR /usr/src/weatherapp_frontend
+# WORKDIR /usr/src/weatherapp_frontend
 
 COPY package*.json ./
 
 RUN npm install
 
-COPY . .
+# COPY . .
 
 EXPOSE 8000
 
