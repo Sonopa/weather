@@ -19,21 +19,26 @@ class Weather extends React.Component {
     super(props);
 
     this.state = {
-      icon: "",
+      nowIcon: "",
+      predictionIcon: "",
     };
   }
 
   async componentWillMount() {
     const weather = await getWeatherFromApi();
-    this.setState({icon: weather.icon.slice(0, -1)});
+    this.setState({nowIcon: weather.now.icon.slice(0, -1)});
+    this.setState({predictionIcon: weather.three_hour_forecast.icon.slice(0, -1)});
   }
 
   render() {
-    const { icon } = this.state;
+    const { nowIcon, predictionIcon } = this.state;
 
     return (
       <div className="icon">
-        { icon && <img src={`/img/${icon}.svg`} /> }
+        <h3>Now:</h3>
+        { nowIcon && <img src={`/img/${nowIcon}.svg`} /> }
+        <h3>Three hours from now:</h3>
+        { predictionIcon && <img src={`/img/${predictionIcon}.svg`} /> }
       </div>
     );
   }
