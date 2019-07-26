@@ -2,20 +2,20 @@ version: "3"
 services:
   frontend:
     build: ./frontend
+    command: sh -c "npm install && npm start"
     env_file:
       - .env
     ports:
       - "8000:8000"
-    working_dir: /usr/src/weatherapp_frontend
     volumes:
-      - ./frontend:/usr/src/weatherapp_frontend:cached
+      - ./frontend:/usr/src/weatherapp/frontend:cached
 
   backend:
     build: ./backend
+    command: sh -c "npm install && npm start"
     env_file:
       - .env
     ports:
       - "9000:9000"
-    working_dir: /usr/src/weatherapp_backend
     volumes:
-      - ./backend:/usr/src/weatherapp_backend:cached
+      - ./backend:/usr/src/weatherapp/backend:cached
