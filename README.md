@@ -1,4 +1,4 @@
-**Weatherapp solution return. Run with `docker-compose up --build`. Currently done excercises are the mandatory ones and the first three of the optional ones.**
+**Weatherapp solution return. Add .env file containing your environment variables and run with `docker-compose up --build`. Currently done excercises are the mandatory ones and the first three of the optional ones.**
 
 # Weatherapp
 
